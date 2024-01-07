@@ -1,0 +1,24 @@
+{
+  "blogs": [
+    {
+      "author": "Pavly",
+      "title": "Blog 1",
+      "id": 1
+    },
+    {
+      "author": "Pavly",
+      "title": "Blog 2",
+      "id": 2
+    },
+    {
+      "author": "Rita",
+      "title": "Blog 3",
+      "id": 3
+    },
+    {
+      "author": "Rita",
+      "title": "Blog 4",
+      "id": 4
+    }
+  ]
+}
