@@ -1,22 +1,27 @@
 import './App.css';
+import ViewRoutes from "./Router";
 import NavBar from "./Components/NavBar";
-import Home from "./Views/Home";
+
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 
-function App() {
-    const title = "Dojo Blog"
+
+const App = () => {
+    const title = "Dojo Blog";
     return (
         <Router>
             <div className="App">
-                <div className="content">
-                    <div className="flex justify-evenly mt-2">
+                <div className="header">
+                    <div className="flex justify-evenly mt-2 mb-20">
                         <h1 className="text-red-500 font-black text-3xl w-[100%]">{title}</h1>
                         <NavBar/>
                     </div>
-                    <br/>
+                </div>
+                <div className="content flex flex-col items-center">
                     <Routes>
-                        <Route index element={<Home/>}/>
-                        <Route path="/about" element={<div>About</div>}/>
+                        <Route index element={ViewRoutes.home.view}/>
+                        <Route path={ViewRoutes.about.path} element={ViewRoutes.about.view}/>
+                        <Route path={ViewRoutes.create.path} element={ViewRoutes.create.view}/>
+                        <Route path={ViewRoutes.blogDetails.path} element={ViewRoutes.blogDetails.view}/>
                     </Routes>
                 </div>
             </div>

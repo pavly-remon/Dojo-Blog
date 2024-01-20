@@ -1,13 +1,12 @@
 import {useEffect, useState} from "react";
 
 const useFetch = (url) => {
-    const abort = new AbortController();
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(true);
     useEffect(() => {
         setTimeout(() => {
-            fetch(url, {signal: abort.signal}).then((res) => {
+            fetch(url).then((res) => {
                 if (!res.ok) {
                     throw Error("Couldn't Fetch Data :(")
                 }
@@ -15,12 +14,13 @@ const useFetch = (url) => {
             }).then((data) => {
                 setData(data);
                 setIsLoading(false)
+                setError(null);
             }).catch(err => {
                 setIsLoading(false)
                 setError(err.message)
+
             })
-        }, 1000)
-        return () => abort.abort();
+        }, 1000);
     }, [url]);
     return {data, isLoading, error}
 }

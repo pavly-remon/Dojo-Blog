@@ -9,8 +9,8 @@ const NavBar = () => {
     return (
         <div className="flex justify-start w-[70%]">
             {
-                pages.map((page) => (
-                    <Link className="tab-item m-2 p-2" to={page.to}>
+                pages.map((page, index) => (
+                    <Link className="tab-item m-2 p-2" to={page.to} key={index}>
                         <div key={page.tabName}>{page.tabName}</div>
                     </Link>
                 ))

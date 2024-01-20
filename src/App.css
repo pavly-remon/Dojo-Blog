@@ -11,3 +11,11 @@
     color: white;
     border-radius: 10px;
 }
+
+.rat-img {
+    transform: scaleX(1);
+}
+
+.reverse {
+    transform: scaleX(-1);
+}
